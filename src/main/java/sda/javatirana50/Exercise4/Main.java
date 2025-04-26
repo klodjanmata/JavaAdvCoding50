@@ -1,4 +1,4 @@
-package sda.javatirana48.Exercise4;
+package sda.javatirana50.Exercise4;
 
 public class Main {
     public static void main(String[] args) {

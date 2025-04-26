@@ -1,4 +1,4 @@
-package sda.javatirana48.Exercise7;
+package sda.javatirana50.Exercise7;
 
 import java.util.Stack;
 public class WeaponMagazine {

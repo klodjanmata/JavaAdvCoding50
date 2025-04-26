@@ -1,4 +1,4 @@
-package sda.javatirana48;
+package sda.javatirana50;
 
 import java.util.HashMap;
 import java.util.Map;

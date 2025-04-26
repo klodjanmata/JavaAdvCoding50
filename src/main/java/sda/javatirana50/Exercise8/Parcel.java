@@ -1,4 +1,4 @@
-package sda.javatirana48.Exercise8;
+package sda.javatirana50.Exercise8;
 
 public class Parcel implements Validator{
     private int xLength;
