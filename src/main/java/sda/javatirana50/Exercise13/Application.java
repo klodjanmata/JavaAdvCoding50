@@ -76,6 +76,10 @@ public class Application {
             case 12:
                 System.out.println("I told not to press this other as well");
                 break;
+            case 13:
+                System.out.println("Add a manufacturer");
+                // TODO
+                break;
             case 144:
                 System.out.println("Congrats! You got a free FERRARI! xp");
                 break;
@@ -105,6 +109,7 @@ public class Application {
         System.out.println("10. Check if a car is on the list");
         System.out.println("11. Print cars by manufacturer");
         System.out.println("12. DO NOT PRESS THIS OTHER AS WELL");
+        System.out.println("13. Add Manufacturer");
         System.out.println("0. Exit");
     }
 }
