@@ -4,50 +4,10 @@ import sda.javatirana50.Exercise12.Car;
 import sda.javatirana50.Exercise12.EngineType;
 import sda.javatirana50.Exercise12.Manufacturer;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-/**
-public List<Lecturer> readFromFile(){
-    try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))){
-        List<Lecturer> lecturerList = new ArrayList<>();
-        boolean firstLine = true;
-        String line;
-        while( (line = br.readLine()) != null){
-            if (firstLine){
-                firstLine = false;
-                continue;
-            }
-            String[] data = line.split(SEPARATOR);
-            Lecturer l = new Lecturer();
-            l.setId(data[0]);
-            l.setName(data[1]);
-            l.setSurname(data[2]);
-            l.setDepartment(Department.valueOf(data[3]));
-            l.setStartDate(dateFormat.parse(data[4]));
-            l.setEmail(data[5]);
-            l.setPhoneNumber(data[6]);
-            l.setGender(data[7].charAt(0));
-            l.setBirthday(dateFormat.parse(data[8]));
-            //SUBJECT LIST
-            lecturerList.add(l);
-        }
-        br.close();
-        return lecturerList;
-    }catch (IOException e){
-        System.out.println("Error while reading Lecturers from file");
-        e.printStackTrace();
-    }catch (ParseException pe){
-        System.out.println("Error while parsing the date");
-        pe.printStackTrace();
-    }
 
-    return null;
-}
- */
 
 public class CarCSVUtil {
     private static final String CSV_FILE_PATH = "Files/Cars.csv";
@@ -81,6 +41,24 @@ public class CarCSVUtil {
         return null;
     }
 
+    public void writeCSV(List<Car> cars){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(CSV_FILE_PATH))){
+            bw.write(getHeadline());
+            for (Car c : cars){
+                bw.newLine();
+                bw.write(c.getName() + SEPARATOR);
+                bw.write(c.getModel() + SEPARATOR);
+                bw.write(c.getPrice() + SEPARATOR);
+                bw.write(c.getYearOfManufacture() + SEPARATOR);
+                bw.write(String.join(";", c.getManufacturers().stream().map(m -> m.getName()).toList()) + SEPARATOR);
+                bw.write(c.getEngineType().name());
+            }
+            bw.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     private List<Manufacturer> manageManufacturers(List<Manufacturer> manufacturers, String[] data){
         List<Manufacturer> myManufacturers = new ArrayList<>();
         for (String str : data){
@@ -88,5 +66,9 @@ public class CarCSVUtil {
             myManufacturers.add(m);
         }
         return myManufacturers;
+    }
+
+    private String getHeadline(){
+        return "Name" + SEPARATOR + "Model" + SEPARATOR + "Price" + SEPARATOR + "Year of manufacture" + SEPARATOR + "Manufacturers" + SEPARATOR + "Engine type";
     }
 }

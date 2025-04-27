@@ -1,11 +1,12 @@
-name,model,price,yearOfManufacture,manufacturers,engineType
-Toyota,Corolla,22000,2020,Toyota Motor Corporation;Daihatsu,S4
-BMW,X5,60000,2019,BMW Group,V8
-Tesla,Model S,80000,2021,Tesla Inc,S6
-Ford,Mustang GT,35000,2018,Ford Motor Company,V8
-Audi,A8,85000,2022,Volkswagen Group;Audi AG,W12
-Mercedes-Benz,S-Class,95000,2021,Daimler AG,V12
-Honda,Civic Type-R,40000,2020,Honda Motor Co. Ltd.,S4
-Volkswagen,Passat,30000,2019,Volkswagen Group,W8
-Chevrolet,Camaro ZL1,60000,2018,General Motors Company,V8
-Nissan,GTR,113000,2021,Nissan Motor Corporation,V10
+Name,Model,Price,Year of manufacture,Manufacturers,Engine type
+Toyota,Corolla,22000.0,2020,Toyota Motor Corporation;Daihatsu,S4
+BMW,X5,60000.0,2019,BMW Group,V8
+Tesla,Model S,80000.0,2021,Tesla Inc,S6
+Ford,Mustang GT,35000.0,2018,Ford Motor Company,V8
+Audi,A8,85000.0,2022,Volkswagen Group;Audi AG,W12
+Mercedes-Benz,S-Class,95000.0,2021,Daimler AG,V12
+Honda,Civic Type-R,40000.0,2020,Honda Motor Co. Ltd.,S4
+Volkswagen,Passat,30000.0,2019,Volkswagen Group,W8
+Chevrolet,Camaro ZL1,60000.0,2018,General Motors Company,V8
+Nissan,GTR,113000.0,2021,Nissan Motor Corporation,V10
+Audi,A4,14000.0,2016,Audi AG,S4

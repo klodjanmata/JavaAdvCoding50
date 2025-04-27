@@ -2,20 +2,19 @@ package sda.javatirana50.Exercise13;
 
 import sda.javatirana50.Exercise12.Manufacturer;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Application {
     private static CarService carService;
     private static List<Manufacturer> manufacturersList;
+    private static CarCSVUtil carCsvUtil = new CarCSVUtil();
+    private static ManufacturerCSVUtil manufacturerCSVUtil = new ManufacturerCSVUtil();
 
     public static void main(String[] args) {
         boolean nextAction = true;
-        CarCSVUtil csvUtil = new CarCSVUtil();
-        ManufacturerCSVUtil manufacturerCSVUtil = new ManufacturerCSVUtil();
         manufacturersList = manufacturerCSVUtil.readCSV();
-        carService = new CarService(csvUtil.readCSV(manufacturersList));
+        carService = new CarService(carCsvUtil.readCSV(manufacturersList), manufacturersList);
         while(nextAction){
             printMenu();
             int input = getInputFromUser();
@@ -33,36 +32,46 @@ public class Application {
         switch (input){
             case 1:
                 System.out.println("Add a car");
+                carService.addCar();
                 break;
             case 2:
                 System.out.println("Remove a car");
+                //carService.removeCar();
                 break;
             case 3:
                 System.out.println("Print all cars");
+                carService.getCars().forEach(System.out::println);
                 break;
             case 4:
                 System.out.println("Print cars by engine type");
+                //carService.getCarsByEngineType();
                 break;
             case 5:
                 System.out.println("Print cars before given year");
+                //carService.getCarsBeforeGivenYear();
                 break;
             case 6:
                 System.out.println("Print the most expensive car");
+                carService.getTheMostExpensiveCar();
                 break;
             case 7:
                 System.out.println("Print the cheapest car");
+                carService.getTheCheapestCar();
                 break;
             case 8:
                 System.out.println("Print cars with at least 3 manufacturers");
+                carService.getCarsWithAtLeast3Man();
                 break;
             case 9:
                 System.out.println("I told not to press this option");
                 break;
             case 10:
                 System.out.println("Check if a car is on the list");
+                //carService.isCarOnTheList();
                 break;
             case 11:
                 System.out.println("Print cars by manufacturer");
+                //carService.getCarsByManufacturer().forEach(System.out::println);
                 break;
             case 12:
                 System.out.println("I told not to press this other as well");
@@ -72,6 +81,8 @@ public class Application {
                 break;
             case 0:
                 System.out.println("Program stopped!");
+                carCsvUtil.writeCSV(carService.getCars());
+                manufacturerCSVUtil.writeCSV(manufacturersList);
                 return false;
             default:
                 System.out.println("Invalid option");

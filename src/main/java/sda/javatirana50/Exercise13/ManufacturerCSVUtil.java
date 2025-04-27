@@ -3,7 +3,9 @@ package sda.javatirana50.Exercise13;
 import sda.javatirana50.Exercise12.Manufacturer;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +38,21 @@ public class ManufacturerCSVUtil {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void writeCSV(List<Manufacturer> manufacturers){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(CSV_FILE_PATH))){
+            bw.write(getHeadline());
+            bw.newLine();
+            for (Manufacturer m : manufacturers){
+                bw.write(m.getName() + SEPARATOR + m.getYearOfEstablishment() + SEPARATOR + m.getCountry());
+                bw.newLine();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private String getHeadline(){
+        return "Name" + SEPARATOR + "Year of establishment" + SEPARATOR + "Country";
     }
 }

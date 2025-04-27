@@ -83,11 +83,16 @@ public class Car {
 
     @Override
     public String toString() {
-        return "name= " + name + '\t' +
-                ", model= " + model + '\t' +
-                ", price=" + price + '\t'+
-                ", yearOfManufacture=" + yearOfManufacture + '\t'+
-                ", manufacturers=" + manufacturers + '\t'+
-                ", engineType=" + engineType + '\t';
+        return  name + '\t' +
+                model + '\t' +
+                price + '\t'+
+                yearOfManufacture + '\t'+
+                manufacturers + '\t'+
+                engineType;
+    }
+
+
+    public static String getHeadline(){
+        return "Name\tModel\tPrice\tYearOfManufacture\tManufacturers\tEngineType";
     }
 }

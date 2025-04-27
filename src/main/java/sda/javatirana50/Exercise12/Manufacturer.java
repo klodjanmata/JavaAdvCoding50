@@ -50,8 +50,12 @@ public class Manufacturer {
 
     @Override
     public String toString() {
-        return "Name=" + name + '\t' +
-                "yearOfEstablishment=" + yearOfEstablishment + '\t' +
-                "country=" + country;
+        return name + '\t' +
+               yearOfEstablishment + '\t' +
+               country;
+    }
+
+    public static String getHeadline(){
+        return "Name\tYearOfEstablishment\tCountry";
     }
 }
