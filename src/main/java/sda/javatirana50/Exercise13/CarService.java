@@ -5,7 +5,6 @@ import sda.javatirana50.Exercise12.EngineType;
 import sda.javatirana50.Exercise12.Manufacturer;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CarService {
     private List<Car> cars;
@@ -59,7 +58,6 @@ public class CarService {
      9. returning a list of all cars sorted according to the passed parameter: ascending / descending,
      12. returning the list of cars manufactured by the manufacturer with the year of establishment <,>, <=,> =,
      =,! = from the given.
-
      */
 
 }

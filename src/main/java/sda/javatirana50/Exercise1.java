@@ -32,6 +32,14 @@ public class Exercise1 {
         System.out.println("Elements after sorting (reverse order):");
         ex.reverseOrderList(elements);
         elements.forEach(System.out::println);
+
+        System.out.println("Elements after sorting (case insensitive):");
+        elements = ex.sortCaseInsensitive(elements);
+        elements.forEach(System.out::println);
+
+        System.out.println("Elements after sorting (case insensitive reverse order):");
+        elements = ex.sortCaseInsensitiveReverse(elements);
+        elements.forEach(System.out::println);
     }
 
     public List<String> orderList(List<String> inputList){
@@ -47,9 +55,15 @@ public class Exercise1 {
         return inputList;
     }
 
-    // TODO Create a method that takes a string list as a parameter,
-    //  then returns that list sorted alphabetically from Z to
-    //  A case-insensitive.
+    public List<String> sortCaseInsensitive(List<String> inputList){
+        Collections.sort(inputList, String.CASE_INSENSITIVE_ORDER);
+        return inputList;
+    }
 
+    public List<String> sortCaseInsensitiveReverse(List<String> inputList){
+        Collections.sort(inputList, String.CASE_INSENSITIVE_ORDER);
+        Collections.reverse(inputList);
+        return inputList;
+    }
 
 }
