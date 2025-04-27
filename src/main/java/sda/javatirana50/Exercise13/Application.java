@@ -1,27 +1,27 @@
 package sda.javatirana50.Exercise13;
 
+import sda.javatirana50.Exercise12.Manufacturer;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Application {
-    private CarService carService;
-
+    private static CarService carService;
+    private static List<Manufacturer> manufacturersList;
 
     public static void main(String[] args) {
         boolean nextAction = true;
         CarCSVUtil csvUtil = new CarCSVUtil();
-        CarService cs = new CarService(csvUtil.readCSV());
-        Application app = new Application(cs);
+        ManufacturerCSVUtil manufacturerCSVUtil = new ManufacturerCSVUtil();
+        manufacturersList = manufacturerCSVUtil.readCSV();
+        carService = new CarService(csvUtil.readCSV(manufacturersList));
         while(nextAction){
             printMenu();
             int input = getInputFromUser();
             nextAction = manageChoice(input);
 
         }
-    }
-
-    public Application(CarService carService){
-        this.carService = carService;
     }
 
     private static int getInputFromUser(){
