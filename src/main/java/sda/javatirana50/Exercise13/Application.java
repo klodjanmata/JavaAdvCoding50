@@ -36,19 +36,19 @@ public class Application {
                 break;
             case 2:
                 System.out.println("Remove a car");
-                //carService.removeCar();
+                carService.removeCar();
                 break;
             case 3:
                 System.out.println("Print all cars");
-                carService.getCars().forEach(System.out::println);
+                carService.printAllCars();
                 break;
             case 4:
                 System.out.println("Print cars by engine type");
-                //carService.getCarsByEngineType();
+                carService.getCarsByEngineType();
                 break;
             case 5:
                 System.out.println("Print cars before given year");
-                //carService.getCarsBeforeGivenYear();
+                carService.getCarsBeforeGivenYear();
                 break;
             case 6:
                 System.out.println("Print the most expensive car");
@@ -67,11 +67,11 @@ public class Application {
                 break;
             case 10:
                 System.out.println("Check if a car is on the list");
-                //carService.isCarOnTheList();
+                System.out.println("Car on list: " + carService.isCarOnTheList());
                 break;
             case 11:
                 System.out.println("Print cars by manufacturer");
-                //carService.getCarsByManufacturer().forEach(System.out::println);
+                carService.getCarsByManufacturer();
                 break;
             case 12:
                 System.out.println("I told not to press this other as well");

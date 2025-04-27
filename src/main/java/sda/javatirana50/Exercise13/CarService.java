@@ -43,38 +43,69 @@ public class CarService {
         System.out.println("Car added successfully to the list!");
     }
 
-    public void removeCar(Car car){
-        cars.remove(car);
+    public void removeCar(){
+        printAllCars();
+        System.out.println("Enter the name of the car you want to remove:");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        try{
+            Car car = cars.stream().filter(c -> c.getName().equals(name)).findFirst().get();
+            cars.remove(car);
+            System.out.println("Car removed successfully!");
+        } catch (Exception e) {
+            System.out.println("Car not found!");
+            e.printStackTrace();
+        }
     }
 
-
-
-    public List<Car> getCarsByEngineType(EngineType engineType){
-        return cars.stream().filter(car -> car.getEngineType().equals(engineType)).toList();
+    public void getCarsByEngineType(){
+        for (EngineType et : EngineType.values()) {
+            System.out.print(et.name() +", ");
+        }
+        System.out.println();
+        System.out.println("Enter the engine type you want to filter by:");
+        Scanner scanner = new Scanner(System.in);
+        EngineType engineType = EngineType.valueOf(scanner.nextLine());
+        printOnlyTheList(cars.stream().filter(car -> car.getEngineType().equals(engineType)).toList());
     }
 
-    public List<Car> getCarsBeforeGivenYear(int year){
-        return cars.stream().filter(car -> car.getYearOfManufacture() < year).toList();
+    private void printOnlyTheList(List<Car> cars){
+        System.out.println(Car.getHeadline());
+        cars.forEach(System.out::println);
     }
 
-    public Car getTheMostExpensiveCar(){
-        return cars.stream().max((car1, car2) -> Double.compare(car1.getPrice(), car2.getPrice())).get();
+    public void getCarsBeforeGivenYear(){
+        System.out.println("Enter the year you want to filter by:");
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        printOnlyTheList(cars.stream().filter(car -> car.getYearOfManufacture() < year).toList());
     }
 
-    public Car getTheCheapestCar(){
-        return cars.stream().min((car1, car2) -> Double.compare(car1.getPrice(), car2.getPrice())).get();
+    public void getTheMostExpensiveCar(){
+        printOnlyTheList(List.of(cars.stream().max((car1, car2) -> Double.compare(car1.getPrice(), car2.getPrice())).get()));
     }
 
-    public List<Car> getCarsWithAtLeast3Man(){
-        return cars.stream().filter(car -> car.getManufacturers().size() >= 3).toList();
+    public void getTheCheapestCar(){
+        printOnlyTheList(List.of(cars.stream().min((car1, car2) -> Double.compare(car1.getPrice(), car2.getPrice())).get()));
     }
 
-    public boolean isCarOnTheList(Car car){
-        return cars.contains(car);
+    public void getCarsWithAtLeast3Man(){
+        printOnlyTheList(cars.stream().filter(car -> car.getManufacturers().size() >= 2).toList());
     }
 
-    public List<Car> getCarsByManufacturer(Manufacturer manufacturer){
-        return cars.stream().filter(car -> car.getManufacturers().contains(manufacturer)).toList();
+    public boolean isCarOnTheList(){
+        System.out.println("Enter the name of the car you want to check:");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        return cars.stream().anyMatch(c -> c.getName().equals(name));
+    }
+
+    public void getCarsByManufacturer(){
+        System.out.println("Enter the name of the manufacturer you want to filter by:");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        Manufacturer m = this.manufacturers.stream().filter(man -> man.getName().equals(name)).findFirst().get();
+        printOnlyTheList(cars.stream().filter(car -> car.getManufacturers().contains(m)).toList());
     }
 
     public List<Car> getCars(){
@@ -82,7 +113,7 @@ public class CarService {
     }
 
     public void printAllCars(){
-        Car.getHeadline();
+        System.out.println(Car.getHeadline());
         cars.forEach(System.out::println);
     }
 
