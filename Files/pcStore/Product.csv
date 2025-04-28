@@ -1,0 +1,4 @@
+Manufacturer,Model,CPU,RAM,Disk,GraphicsCard,Battery
+HP,Victus,Intel I7 Gen11 H,32,1260,nvidia GEFORCE RTX,4.0
+Apple,Mackbook Air,AMD m1,16,516,NOPE,13.0
+DELL,Latitude,Intel I5 Gen11 U,16,256,NOPE,7.0
