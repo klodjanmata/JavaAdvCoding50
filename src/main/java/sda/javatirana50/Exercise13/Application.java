@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Application {
     private static CarService carService;
+    private static ManufacturerService manufacturerService;
     private static List<Manufacturer> manufacturersList;
     private static CarCSVUtil carCsvUtil = new CarCSVUtil();
     private static ManufacturerCSVUtil manufacturerCSVUtil = new ManufacturerCSVUtil();
@@ -15,6 +16,7 @@ public class Application {
         boolean nextAction = true;
         manufacturersList = manufacturerCSVUtil.readCSV();
         carService = new CarService(carCsvUtil.readCSV(manufacturersList), manufacturersList);
+        manufacturerService = new ManufacturerService();
         while(nextAction){
             printMenu();
             int input = getInputFromUser();
@@ -78,7 +80,7 @@ public class Application {
                 break;
             case 13:
                 System.out.println("Add a manufacturer");
-                // TODO
+                manufacturerService.addManufacturer(manufacturersList);
                 break;
             case 144:
                 System.out.println("Congrats! You got a free FERRARI! xp");
