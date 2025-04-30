@@ -28,13 +28,12 @@ public class InventoryService {
     }
 
     public void printInventoryValue(){
-        int totalValue = 0;
-        //TODO
+        float totalValue = 0;
+        for (Inventory inventory : inventoryList){
+            totalValue += inventory.getQuantity() * inventory.getPrice();
+        }
         System.out.println("Total value: " + totalValue);
     }
-
-
-
 
     private String getHeader(){
         return "Manufacturer\tModel\tQuantity\tPrice";

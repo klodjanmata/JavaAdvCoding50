@@ -2,3 +2,18 @@ Manufacturer,Model,CPU,RAM,Disk,GraphicsCard,Battery
 HP,Victus,Intel I7 Gen11 H,32,1260,nvidia GEFORCE RTX,4.0
 Apple,Mackbook Air,AMD m1,16,516,NOPE,13.0
 DELL,Latitude,Intel I5 Gen11 U,16,256,NOPE,7.0
+Lenovo,ThinkPad X1 Carbon,Intel I7 Gen12 U,16,512,Intel Iris Xe,10.0
+Asus,ZenBook Pro Duo,Intel I9 Gen13 H,32,2048,nvidia RTX 4070,5.5
+Microsoft,Surface Laptop 5,Intel I5 Gen12 U,8,256,Intel Iris Xe,14.0
+Acer,Swift 3,AMD Ryzen 7 5700U,16,512,AMD Radeon Graphics,9.5
+Apple,MacBook Pro,Apple M3 Pro,32,1024,NOPE,15.0
+HP,Spectre x360,Intel I7 Gen12 U,16,1024,Intel Iris Xe,12.0
+Dell,XPS 15,Intel I7 Gen13 H,32,2048,nvidia RTX 4060,8.0
+MSI,Prestige 14,Intel I7 Gen12 U,16,512,nvidia GTX 1650,8.0
+LG,Gram 17,Intel I7 Gen12 U,16,1024,Intel Iris Xe,19.5
+Razer,Blade 15,Intel I9 Gen13 H,64,4096,nvidia RTX 4090,4.0
+Samsung,Galaxy Book3 Ultra,Intel I7 Gen13 H,32,1024,nvidia RTX 4070,9.0
+Huawei,MateBook X Pro,Intel I7 Gen12 U,16,512,Intel Iris Xe,10.5
+Asus,ROG Zephyrus G14,AMD Ryzen 9 7940HS,32,2048,nvidia RTX 4080,7.0
+Microsoft,Surface Pro 9,Intel I5 Gen12 U,8,256,Intel Iris Xe,10.0
+Lenovo,Legion 5,AMD Ryzen 7 7840HS,16,1024,nvidia RTX 4060,6.5
