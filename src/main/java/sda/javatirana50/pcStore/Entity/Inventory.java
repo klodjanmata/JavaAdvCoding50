@@ -13,8 +13,7 @@ public class Inventory {
         this.manufacturer = manufacturer;
     }
 
-    public Inventory() {
-    }
+    public Inventory() {}
 
     public String getManufacturer() {
         return manufacturer;

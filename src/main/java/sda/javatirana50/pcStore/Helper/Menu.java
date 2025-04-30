@@ -9,10 +9,7 @@ public class Menu {
         System.out.println("3. Search Product");
         System.out.println("4. Display All Products");
         System.out.println("5. Add Inventory Quantity");
-
-
-
-
+        System.out.println("6. Print Full Inventory");
         System.out.println("0. Exit");
 
     }

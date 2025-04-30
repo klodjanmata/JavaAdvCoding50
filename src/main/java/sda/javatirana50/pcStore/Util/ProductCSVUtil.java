@@ -31,7 +31,6 @@ public class ProductCSVUtil {
         }catch (Exception e){
             e.printStackTrace();
         }
-
     }
 
     public List<Laptop> readFromFile(){
